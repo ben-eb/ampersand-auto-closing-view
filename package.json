@@ -1,0 +1,33 @@
+{
+  "name": "ampersand-auto-closing-view",
+  "version": "0.0.0",
+  "description": "A view that closes itself after a certain period of time.",
+  "license": "MIT",
+  "homepage": "https://github.com/ben-eb/ampersand-auto-closing-view",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "therealbenbriggs@hotmail.com",
+    "url": "http://beneb.info"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "ampersand-view": "^7.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.1",
+    "coverify": "^1.0.7",
+    "tape": "^3.0.3",
+    "tape-run": "^0.3.0"
+  },
+  "keywords": [
+    "ampersand",
+    "hidden"
+  ],
+  "scripts": {
+    "test": "browserify -t coverify test.js | tape-run | coverify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ben-eb/ampersand-auto-closing-view.git"
+  }
+}
