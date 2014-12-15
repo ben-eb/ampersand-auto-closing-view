@@ -1,6 +1,6 @@
 {
   "name": "ampersand-auto-closing-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A view that closes itself after a certain period of time.",
   "license": "MIT",
   "homepage": "https://github.com/ben-eb/ampersand-auto-closing-view",
