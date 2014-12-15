@@ -22,7 +22,7 @@ var MyACView = ACView.extend({
 });
 
 var MyView = View.extend({
-    template: '<div class="container"><div class="prompt"></div></div>",
+    template: '<div class="container"><div class="prompt"></div></div>',
     events: {
         'mousemove': 'reset'
     },
