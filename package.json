@@ -16,6 +16,7 @@
   "devDependencies": {
     "browserify": "^7.0.1",
     "coverify": "^1.0.7",
+    "function-bind": "^1.0.2",
     "tape": "^3.0.3",
     "tape-run": "^0.3.0"
   },

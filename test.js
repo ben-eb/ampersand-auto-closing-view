@@ -11,23 +11,10 @@ function setup(opts) {
 
 /**
  * Polyfill bind for phantomjs
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
  */
 
 if (!Function.prototype.bind) {
-    Function.prototype.bind = function(oThis) {
-        var aArgs   = Array.prototype.slice.call(arguments, 1),
-            fToBind = this,
-            fNOP    = function() {},
-            fBound  = function() {
-                return fToBind.apply(oThis, aArgs.concat(Array.prototype.slice.call(arguments)));
-            };
-
-        fNOP.prototype = this.prototype;
-        fBound.prototype = new fNOP();
-
-        return fBound;
-    };
+    Function.prototype.bind = require('function-bind');
 }
 
 test('should have a valid duration', function(t) {
