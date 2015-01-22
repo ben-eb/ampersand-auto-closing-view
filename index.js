@@ -29,6 +29,7 @@ module.exports = View.extend({
     initialize: function() {
         this.listenTo(this, 'reset', this.reset);
         this.listenTo(this, 'stay', this.stay);
+        return this;
     },
     /**
      * Renders the view into the DOM and "hides" it.
@@ -36,6 +37,7 @@ module.exports = View.extend({
     render: function() {
         this.renderWithTemplate();
         this.hide();
+        return this;
     },
     /**
      * "Hides" the view. Note that you should supplement this
@@ -46,6 +48,7 @@ module.exports = View.extend({
         this._manageClass(this.hiddenClass, this.activeClass);
         this.trigger('hidden', this);
         this.clear();
+        return this;
     },
     /**
      * "Shows" the view. Note that you should supplement this
@@ -55,6 +58,7 @@ module.exports = View.extend({
     show: function() {
         this._manageClass(this.activeClass, this.hiddenClass);
         this.trigger('active', this);
+        return this;
     },
     /**
      * Reset the timer for the view, keeping it on screen for
@@ -63,6 +67,7 @@ module.exports = View.extend({
     reset: function() {
         this.stay();
         this._timeOut = setTimeout(this.hide.bind(this), this.duration);
+        return this;
     },
     /**
      * Convenience for clearing the timer and showing the view.
@@ -70,6 +75,7 @@ module.exports = View.extend({
     stay: function() {
         this.show();
         this.clear();
+        return this;
     },
     /**
      * Clears the timeout for the view, so that you can
@@ -79,6 +85,7 @@ module.exports = View.extend({
      */
     clear: function() {
         this._timeOut && clearTimeout(this._timeOut);
+        return this;
     },
     /**
      * Small helper for adding/removing classes from the element
@@ -89,5 +96,6 @@ module.exports = View.extend({
     _manageClass: function(add, remove) {
         this.el.classList.add(add);
         this.el.classList.remove(remove);
+        return this;
     }
 });
